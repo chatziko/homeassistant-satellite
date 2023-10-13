@@ -1,0 +1,11 @@
+version: '3'
+services:
+  homeassistant-satellite:
+    restart: unless-stopped
+    container_name: homeassistant-satellite
+    build: .
+    command: /entrypoint.sh
+    volumes:
+      - ./entrypoint.sh:/entrypoint.sh
+    devices:
+      - /dev/snd:/dev/snd
